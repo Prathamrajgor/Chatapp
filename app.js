@@ -1,14 +1,15 @@
 const express=require("express");
 const mongoose=require("mongoose");
-const dotenv=require("dotenv").config();
+const dotenv=require("dotenv");
+dotenv.config();
 const cors=require("cors");
 const app =express();
 const http=require("http");
 const {Server} =require("socket.io");
-const { response } = require("express");
 const path = require("path");
 
 const server=http.createServer(app);
+cors();
 const io=new Server(server,{
     cors:{
         origin:"*",
