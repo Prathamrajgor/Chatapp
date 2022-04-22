@@ -1,15 +1,16 @@
 const express=require("express");
 const mongoose=require("mongoose");
 const dotenv=require("dotenv");
-dotenv.config();
+dotenv.config({path:"./config.env"});
 const cors=require("cors");
 const app =express();
 const http=require("http");
 const {Server} =require("socket.io");
 const path = require("path");
 
+
+
 const server=http.createServer(app);
-cors();
 const io=new Server(server,{
     cors:{
         origin:"*",
@@ -17,7 +18,7 @@ const io=new Server(server,{
     }
 });
 
-mongoose.connect(String(process.env.DATABASE),()=>{
+mongoose.connect(process.env.DATABASE,()=>{
     console.log("Connected to Database Succesfully");
 },(err)=>{
     console.log("Error: ",err);
