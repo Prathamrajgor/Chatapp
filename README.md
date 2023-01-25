@@ -1,9 +1,6 @@
 # Chatapp
 A full-functional and responsive Chat Application made using MERN stack, Tailwind CSS and Socket.io.
 
-## Heroku Link:
-https://chatapp-by-pratham.herokuapp.com/
-
 ## Usage
 The App has 2 options. 
 1. Create a New room
